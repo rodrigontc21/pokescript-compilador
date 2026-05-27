@@ -84,20 +84,36 @@ Desenvolver, de forma incremental, uma **linguagem de programação própria** c
 ---
 
 ## 📐 Gramática (resumo BNF)
+
+```text
 programa     -> declaracao* EOF
+
 declaracao   -> decl_pokemon | decl_batalha | comando
+
 decl_pokemon -> POKEMON ID atrib_pok* FIM
+
 decl_batalha -> BATALHA ID VS ID bloco FIM
+
 bloco        -> comando*
-comando      -> MOSTRAR expressao | CAPTURAR ID
-| SE expressao ENTAO bloco (SENAO bloco)? FIM
-| ENQUANTO expressao FACA bloco FIM
-| INTEIRO ID ATRIB expressao
-| TEXTO ID ATRIB expressao
-| ID ATRIB expressao
-| ID PONTO ID ATRIB expressao
-expressao    -> expr_ou -> expr_e -> expr_nao -> expr_comp
--> expr_soma -> expr_mult -> expr_unario -> fator
+
+comando      -> MOSTRAR expressao
+              | CAPTURAR ID
+              | SE expressao ENTAO bloco (SENAO bloco)? FIM
+              | ENQUANTO expressao FACA bloco FIM
+              | INTEIRO ID ATRIB expressao
+              | TEXTO ID ATRIB expressao
+              | ID ATRIB expressao
+              | ID PONTO ID ATRIB expressao
+
+expressao    -> expr_ou
+             -> expr_e
+             -> expr_nao
+             -> expr_comp
+             -> expr_soma
+             -> expr_mult
+             -> expr_unario
+             -> fator
+```
 ---
 
 ## 📈 Resultados (Resumo)
